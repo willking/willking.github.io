@@ -1,43 +1,69 @@
-$(document).ready(function(){
-    animateDiv();
-    
-});
-
-function makeNewPosition(){
-    
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 50;
-    var w = $(window).width() - 50;
-    
-    var nh = Math.floor(Math.random() * h);
-    var nw = Math.floor(Math.random() * w);
-    
-    return [nh,nw];    
-    
-}
-
-function animateDiv(){
-    var newq = makeNewPosition();
-    var oldq = $('.a').offset();
-    var speed = calcSpeed([oldq.top, oldq.left], newq);
-    
-    $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
-      animateDiv();        
-    });
-    
-};
-
-function calcSpeed(prev, next) {
-    
-    var x = Math.abs(prev[1] - next[1]);
-    var y = Math.abs(prev[0] - next[0]);
-    
-    var greatest = x > y ? x : y;
-    
-    var speedModifier = 0.1;
-
-    var speed = Math.ceil(greatest/speedModifier);
-
-    return speed;
-
+window.onload = function(){
+  var max_width = window.innerWidth;
+  var max_height = window.innerHeight;
+  
+  var directions = {left:1,up:2,right:3,down:4}
+  var direction = getRandomDirection();
+  var distance = getRandomDistance();
+  
+  var target = document.getElementById("ghost");
+  var target_pos = {top:0,left:0}
+  
+  var i = 0;
+  
+  var render_rate = 40;
+  var move_step = 2;
+  
+  setInterval(function(){
+      i++;
+      if(i > distance){
+         distance = getRandomDistance();
+         direction = getRandomDirection();
+         i = 0;
+      }
+      move(target,direction,move_step)
+  },render_rate)
+  
+  function getRandomDistance(){
+      return Math.floor((Math.random() * 20) + 1) + 5;
+  }
+  
+  function getRandomDirection(){
+      return Math.floor((Math.random() * 4) + 1);
+  }
+  
+  function move(el,direction,step){
+    switch(direction){
+       case directions.left: {
+         if(target_pos.left < max_width){
+             target_pos.left += step;
+             target.style.left = target_pos.left + "px";
+         }
+         break;
+       }
+       case directions.up: {
+         if(target_pos.top < max_height){
+             target_pos.top += step;
+             target.style.top = target_pos.top + "px";
+         }
+         break;
+       }
+        
+       case directions.right: {
+         if(target_pos.left > 0){
+            target_pos.left -= step;
+            target.style.left = target_pos.left + "px";
+         }
+         break;
+       }
+        
+       case directions.down: {
+         if(target_pos.top > 0){
+            target_pos.top -= step;
+            target.style.top = target_pos.top + "px";
+         }
+         break;
+       }
+    }
+  }
 }
