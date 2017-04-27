@@ -18,7 +18,7 @@ body {
 /*	background: url("https://www.toptal.com/designers/subtlepatterns/patterns/cream_pixels.png");
 */}
 
-section {
+/*section {
 	position: absolute;
   	width: 400px;
   	height: 400px;
@@ -30,6 +30,20 @@ section {
   	-webkit-border-radius: 200px;
     -moz-border-radius: 200px;
     border-radius: 200px;
+}*/
+
+div.moving {
+	position: fixed;
+  	width: 400px;
+  	height: 400px;
+  	background-color: #fcb32d;
+  	-webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    border-radius: 200px;
+    z-index: 15;
+  	top: 50%;
+  	left: 50%;
+  	margin: -200px 0 0 -200px;
 }
 
 section:hover {
