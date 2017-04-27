@@ -1,20 +1,22 @@
 h1 {
-	font-family: 'Palanquin Dark', sans-serif;
+	font-family: 'Droid Sans', sans-serif;
 	font-size: 32px;
 	color: white;
-	padding: 35px 80px;
+	padding: 55px 80px;
+	font-weight: 900;
+	line-height: 1.4;
 }
 
 h2 {
-	font-family: 'Palanquin Dark', sans-serif;
+	font-family: 'Droid Sans', sans-serif;
 	font-size: 28px;
 	padding: 5px 80px;
 }
 
 body {
-/*	background: url("https://www.toptal.com/designers/subtlepatterns/patterns/pixel_weave.png");*/
-	background: url("https://www.toptal.com/designers/subtlepatterns/patterns/cream_pixels.png");
-}
+	background: url("https://www.toptal.com/designers/subtlepatterns/patterns/geometry.png");
+/*	background: url("https://www.toptal.com/designers/subtlepatterns/patterns/cream_pixels.png");
+*/}
 
 section {
 	position: absolute;
@@ -31,5 +33,5 @@ section {
 }
 
 section:hover {
-	opacity: 0.5;
+	opacity: 0.9;
 }
