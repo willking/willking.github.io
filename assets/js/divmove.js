@@ -68,8 +68,8 @@ window.onload = function(){
   }
 }
 
-/*-------CHANGE SHAPE--------*/
-var colors = ["#fcb32d", "yellow"];
+/*-------CHANGE COLOR--------*/
+var colors = ["#fcb32d", "blue"];
 var i = 0;
 var selectedColor;
     function button_click() {
@@ -79,3 +79,5 @@ var selectedColor;
         if(i > colors.length)
             i = 0;
     }
+
+/*-------CHANGE SHAPE--------*/

@@ -40,6 +40,6 @@ section {
 	top:0;
 }
 
-section:hover {
-	opacity: 0.8;
+#ghost:hover {
+	background-color: #5672ff;
 }
