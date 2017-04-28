@@ -67,3 +67,15 @@ window.onload = function(){
     }
   }
 }
+
+/*-------CHANGE SHAPE--------*/
+var colors = ["#fcb32d", "yellow"];
+var i = 0;
+var selectedColor;
+    function button_click() {
+        selectedColor = colors[i];
+        document.getElementById("ghost").style.backgroundColor = selectedColor;
+        i++;
+        if(i > colors.length)
+            i = 0;
+    }
